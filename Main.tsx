@@ -9,7 +9,7 @@ const options = ({ route }) => ({
   tabBarIcon: ({ focused, color, size }) => {
     let iconName;
 
-    if (route.name === 'Home') {
+    if (route.name === 'OFE') {
       iconName = focused
         ? 'ios-information-circle'
         : 'ios-information-circle-outline';
