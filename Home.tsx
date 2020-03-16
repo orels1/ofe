@@ -53,10 +53,7 @@ export const Home = React.memo(({ users, fetchUsers }: HomeProps): React.ReactEl
 export default connect((state: State) => ({
   users: Selectors.userData(state),
 }), dispatch => ({
-  fetchUsers: () => {
-    console.log('dispatching');
-    dispatch(Actions.users.fetchUsers.trigger());
-  }
+  fetchUsers: () => dispatch(Actions.users.fetchUsers.trigger()),
 }))(Home);
 
 const Container = styled.View`

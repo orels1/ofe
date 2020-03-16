@@ -9,7 +9,6 @@ const initialState: UserState = {
 const users = (state: UserState = initialState, action: Action) => {
   switch (action.type) {
     case Actions.users.fetchUsers.success.toString():
-      console.log('got users', action);
       return {
         ...state,
         list: action.payload,
