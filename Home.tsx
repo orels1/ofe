@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components/native';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, StyleSheet, View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
 import Actions from './actions';
@@ -29,24 +28,24 @@ export const Home = React.memo(({ users, fetchUsers }: HomeProps): React.ReactEl
   }
 
   return (
-    <Container>
-      <TopBar>
-        <Column>
-          <H1>{user.name}</H1>
-          <S1>{user.website}</S1>
-        </Column>
-        <Column>
-          <Row>
+    <View style={styles.container}>
+      <View style={styles.topBar}>
+        <View style={styles.column}>
+          <Text style={styles.h1}>{user.name}</Text>
+          <Text style={styles.s1}>{user.website}</Text>
+        </View>
+        <View style={styles.column}>
+          <View style={styles.row}>
             <TouchableOpacity onPress={prev}>
-              <ArrowIcon name="md-arrow-back" size={32} color={theme.colors.accent} />
+              <Ionicons style={styles.arrowIcon} name="md-arrow-back" size={32} color={theme.colors.accent} />
             </TouchableOpacity>
             <TouchableOpacity onPress={next}>
-              <ArrowIcon name="md-arrow-forward" size={32} color={theme.colors.accent} />
+              <Ionicons style={styles.arrowIcon} name="md-arrow-forward" size={32} color={theme.colors.accent} />
             </TouchableOpacity>
-          </Row>
-        </Column>
-      </TopBar>
-    </Container>
+          </View>
+        </View>
+      </View>
+    </View>
   )
 });
 
@@ -56,38 +55,32 @@ export default connect((state: State) => ({
   fetchUsers: () => dispatch(Actions.users.fetchUsers.trigger()),
 }))(Home);
 
-const Container = styled.View`
-  flex: 1;
-  background-color: ${({ theme }) => theme.colors.white};
-  align-items: center;
-`;
-
-const TopBar = styled.View`
-  width: 100%;
-  padding: ${({ theme }) => theme.space.lg}px;
-  background-color: ${({ theme }) => theme.colors.contentBg};
-  justify-content: space-between;
-  flex-direction: row;
-`
-
-const Column = styled.View`
-`;
-
-const Row = styled.View`
-  flex-direction: row;
-`
-
-const ArrowIcon = styled(Ionicons)`
-  margin: 0 ${({ theme }) => theme.space.md}px;
-`
-
-const H1 = styled.Text`
-  font-size: 16px;
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.basic};
-`
-
-const S1 = styled.Text`
-  font-size: 12px;
-  color: ${({ theme }) => theme.colors.basic200};
-`
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: theme.colors.white,
+    alignItems: 'center'
+  },
+  topBar: {
+    width: '100%',
+    padding: theme.space.lg,
+    backgroundColor: theme.colors.contentBg,
+    justifyContent: 'space-between',
+    flexDirection: 'row'
+  },
+  column: {},
+  row: { flexDirection: 'row' },
+  arrowIcon: {
+    marginVertical: 0,
+    marginHorizontal: theme.space.md
+  },
+  h1: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: theme.colors.basic,
+  },
+  s1: {
+    fontSize: 12,
+    color: theme.colors.basic200
+  }
+})

@@ -1,6 +1,6 @@
 # OF Exercise
 
-This exercise utilizes typescript, redux-sagas andd styled components and is aimed to provide a good understanding of a real-world like screen implementation approach.
+This exercise utilizes typescript, but otherwise is almost a 100% vanilla react-native app.
 
 This uses data from https://jsonplaceholder.typicode.com mock api.
 
@@ -19,7 +19,7 @@ This uses data from https://jsonplaceholder.typicode.com mock api.
 
 ## Bonus points
 
-- Loading placeholders of any kinda.
+- Loading placeholders of any kind.
 - Ability to navigate to post screen when tapping on post
   - Post screen contains the original post info on the top and a list of comments below.
   - User should be able to go back to  the user they were browsing by tapping a back button in the top left corner of the screen.
