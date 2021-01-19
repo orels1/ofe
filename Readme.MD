@@ -24,9 +24,10 @@ This uses data from https://jsonplaceholder.typicode.com mock api.
 - Loading placeholders of any kind.
 - Ability to navigate to post screen when tapping on post
   - Post screen contains the original post info on the top and a list of comments below.
-  - User should be able to go back to  the user they were browsing by tapping a back button in the top left corner of the screen.
+  - User should be able to go back to the user they were browsing by tapping a back button in the top left corner of the screen.
 - Sharing post styles between the post item in the main user screen and the post screen.
 - Sharing the post response typings between main user screen and the post screen.
 - Usage of reselect library.
-  
+- Refactor the Home component to use hooks for Redux instead of `connect`
+
 Have fun :)
