@@ -26,5 +26,6 @@ This uses data from https://jsonplaceholder.typicode.com mock api.
 - Sharing post styles between the post item in the main user screen and the post screen.
 - Sharing the post response typings between main user screen and the post screen.
 - Usage of reselect library.
+- Refactor the Home component to use hooks for Redux instead of connect
   
 Have fun :)
