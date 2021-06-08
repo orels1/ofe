@@ -58,14 +58,14 @@ export default connect((state: State) => ({
 
 const Container = styled.View`
   flex: 1;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: #fff;
   align-items: center;
 `;
 
 const TopBar = styled.View`
   width: 100%;
-  padding: ${({ theme }) => theme.space.lg}px;
-  background-color: ${({ theme }) => theme.colors.contentBg};
+  padding: 15px;
+  background-color: #e2f0fe;
   justify-content: space-between;
   flex-direction: row;
 `
@@ -78,16 +78,16 @@ const Row = styled.View`
 `
 
 const ArrowIcon = styled(Ionicons)`
-  margin: 0 ${({ theme }) => theme.space.md}px;
+  margin: 0 10px;
 `
 
 const H1 = styled.Text`
   font-size: 16px;
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.basic};
+  color: #2f2d31;
 `
 
 const S1 = styled.Text`
   font-size: 12px;
-  color: ${({ theme }) => theme.colors.basic200};
+  color: #8a898a;
 `
