@@ -3,7 +3,6 @@
     "name": "Blank Template (TypeScript)",
     "slug": "of-excercise",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
       "android",
